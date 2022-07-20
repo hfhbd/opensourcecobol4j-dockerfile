@@ -9,7 +9,7 @@ RUN ln -s /usr/bin/aclocal /usr/bin/aclocal-1.13 &&\
 # create library directories
 RUN mkdir /root/.java_lib
 
-# download opensourcecobol4j 1.0.3
+# download opensourcecobol4j 1.0.4
 RUN cd /root/ &&\
     curl -L -o opensourcecobol4j.tar.gz https://github.com/opensourcecobol/opensourcecobol4j/archive/refs/tags/v1.0.4.tar.gz &&\
     curl -L -o libcobj.jar              https://github.com/opensourcecobol/opensourcecobol4j/releases/download/v1.0.4/libcobj-1.0.4.jar &&\
@@ -26,7 +26,7 @@ RUN cd /root/ &&\
     mv sqlite.jar .java_lib
 
 # install opensourcecobol4j
-RUN cd /root/opensourcecobol4j-1.0.3/vbisam &&\
+RUN cd /root/opensourcecobol4j-1.0.4/vbisam &&\
     ./configure --prefix=/usr/ &&\
     make install &&\
     cd ../ &&\
