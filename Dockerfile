@@ -11,8 +11,8 @@ RUN mkdir /root/.java_lib
 
 # download opensourcecobol4j 1.0.3
 RUN cd /root/ &&\
-    curl -L -o opensourcecobol4j.tar.gz https://github.com/opensourcecobol/opensourcecobol4j/archive/refs/tags/v1.0.3.tar.gz &&\
-    curl -L -o libcobj.jar              https://github.com/opensourcecobol/opensourcecobol4j/releases/download/v1.0.3/libcobj-1.0.3.jar &&\
+    curl -L -o opensourcecobol4j.tar.gz https://github.com/opensourcecobol/opensourcecobol4j/archive/refs/tags/v1.0.4.tar.gz &&\
+    curl -L -o libcobj.jar              https://github.com/opensourcecobol/opensourcecobol4j/releases/download/v1.0.4/libcobj-1.0.4.jar &&\
     curl -L -o sqlite.jar               https://github.com/xerial/sqlite-jdbc/releases/download/3.36.0.3/sqlite-jdbc-3.36.0.3.jar &&\
     tar zxvf opensourcecobol4j.tar.gz &&\
     rm -f opensourcecobol4j.tar.gz
