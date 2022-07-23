@@ -13,6 +13,6 @@ jobs:
     steps:
       - run: docker login ghcr.io -u ${{ github.actor }} -p ${{ github.token }}
       - uses: actions/checkout@v3
-      - run: docker build --platform linux/amd64 --tag ghcr.io/hfhbd/cobol2java:${{ github.github.event.pull_request.head.sha }} .
-      - run: docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java:${{ github.github.event.pull_request.head.sha }} HELLO.cbl
-      - run: docker push ghcr.io/hfhbd/cobol2java:${{ github.github.event.pull_request.head.sha }}
+      - run: docker build --platform linux/amd64 --tag ghcr.io/hfhbd/cobol2java:${{ github.event.pull_request.head.sha }} .
+      - run: docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java:${{ github.event.pull_request.head.sha }} HELLO.cbl
+      - run: docker push ghcr.io/hfhbd/cobol2java:${{ github.event.pull_request.head.sha }}
