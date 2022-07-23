@@ -2,7 +2,7 @@ FROM eclipse-temurin:17
 
 # install dependencies of opensourcecobol 4j
 RUN apt-get update &&\
-    apt-get install -y build-essential autoconf
+    apt-get install -y build-essential libgmp3-dev autoconf
 
 # create library directories
 RUN mkdir /root/.java_lib
