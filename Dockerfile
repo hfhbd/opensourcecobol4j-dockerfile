@@ -9,6 +9,7 @@ RUN mkdir /root/.java_lib
 
 # install SQLite JDBC driver
 RUN curl -sS -L -o /root/.java_lib/sqlite.jar https://github.com/xerial/sqlite-jdbc/releases/download/3.36.0.3/sqlite-jdbc-3.36.0.3.jar
+ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar
 
 # install opensourcecobol4j
 RUN cd /root &&\
@@ -24,4 +25,4 @@ RUN cd /root &&\
 ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/libcobj.jar
 
 WORKDIR /output
-ENTRYPOINT ["cobc"]
+ENTRYPOINT ["cobj"]
