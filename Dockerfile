@@ -30,10 +30,10 @@ ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.j
 RUN cd /root &&\
     curl -sS -L -o ocesql4j-v1.0.1.tar.gz https://github.com/opensourcecobol/Open-COBOL-ESQL-4j/archive/refs/tags/v1.0.1.tar.gz &&\
     tar zxf ocesql4j-v1.0.1.tar.gz &&\
-    cd ocesql4j-v1.0.1 &&\
+    cd Open-COBOL-ESQL-4j-1.0.1 &&\
     ./configure --prefix=/usr/ &&\
     make &&\
-    make install \
+    make install
 
 RUN curl -sS -L -o ocesql4j.jar https://github.com/opensourcecobol/Open-COBOL-ESQL-4j/releases/download/v1.0.1/ocesql4j.jar &&\
     cp ocesql4j.jar /root/.java_lib/ocesql4j.jar
