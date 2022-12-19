@@ -27,18 +27,8 @@ RUN cd /root &&\
 ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.jar:/root/.java_lib/libcobj.jar
 
 # install esql
-RUN cd /root &&\
-    curl -sS -L -o ocesql4j-v1.0.1.tar.gz https://github.com/opensourcecobol/Open-COBOL-ESQL-4j/archive/refs/tags/v1.0.1.tar.gz &&\
-    tar zxf ocesql4j-v1.0.1.tar.gz &&\
-    cd ocesql4j-v1.0.1 &&\
-    ./configure --prefix=/usr/ &&\
-    make &&\
-    make install &&\
-    cp /root/.java_lib/{libcobj,postgresql}.jar dblibj/lib &&\
-    cd dblibj &&\
-    export CLASSPATH="$HOME/.java_lib/sqlite.jar:$HOME/.java_lib/postgresql.jar:$HOME/.java_lib/libcobj.jar" &&\
-    sbt assembly &&\
-    cp target/scala-2.13/ocesql4j.jar /root/.java_lib/ocesql4j.jar
+RUN curl -sS -L -o ocesql4j.jar https://github.com/opensourcecobol/Open-COBOL-ESQL-4j/releases/download/v1.0.1/ocesql4j.jar &&\
+    cp ocesql4j.jar /root/.java_lib/ocesql4j.jar
 
 ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.jar:/root/.java_lib/libcobj.jar:/root/.java_lib/ocesql4j.jar
 
