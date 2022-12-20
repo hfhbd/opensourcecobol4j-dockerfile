@@ -14,5 +14,6 @@ jobs:
       - run: docker login ghcr.io -u ${{ github.actor }} -p ${{ github.token }}
       - uses: actions/checkout@v3
       - run: docker build --platform linux/amd64 --tag ghcr.io/hfhbd/cobol2java .
-      - run: docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java HELLO.cbl
+      - run: docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java cobj HELLO.cbl
+      - run: docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java ocesql SQL.cbl
       - run: docker push ghcr.io/hfhbd/cobol2java
