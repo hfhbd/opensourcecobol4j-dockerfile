@@ -28,7 +28,7 @@ ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.j
 
 # install esql
 RUN cd /root &&\
-    curl -sS -L -o ocesql4j-v1.0.1.tar.gz https://github.com/opensourcecobol/Open-COBOL-ESQL-4j/archive/refs/tags/v1.0.1.tar.gz &&\
+    curl -sS -L -o ocesql4j-v1.0.1.tar.gz https://github.com/hfhbd/Open-COBOL-ESQL-4j/archive/refs/tags/v0.1.1.tar.gz &&\
     tar zxf ocesql4j-v1.0.1.tar.gz &&\
     cd Open-COBOL-ESQL-4j-1.0.1 &&\
     ./configure --prefix=/usr/ &&\
