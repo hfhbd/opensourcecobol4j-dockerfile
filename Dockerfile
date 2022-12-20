@@ -41,4 +41,3 @@ RUN curl -sS -L -o ocesql4j.jar https://github.com/opensourcecobol/Open-COBOL-ES
 ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.jar:/root/.java_lib/libcobj.jar:/root/.java_lib/ocesql4j.jar
 
 WORKDIR /output
-RUN ["cobj"]
