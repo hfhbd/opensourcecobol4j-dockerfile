@@ -15,7 +15,7 @@ ENV CLASSPATH=$CLASSPATH:/root/.java_lib/sqlite.jar:/root/.java_lib/postgresql.j
 
 # install opensourcecobol4j
 RUN cd /root &&\
-    curl -sS -L -o opensourcecobol4j-v1.0.5.tar.gz https://github.com/opensourcecobol/opensourcecobol4j/archive/refs/tags/v1.0.7.tar.gz &&\
+    curl -sS -L -o opensourcecobol4j-v1.0.7.tar.gz https://github.com/opensourcecobol/opensourcecobol4j/archive/refs/tags/v1.0.7.tar.gz &&\
     tar zxf opensourcecobol4j-v1.0.7.tar.gz &&\
     cd opensourcecobol4j-1.0.7 &&\
     ./configure --prefix=/usr/ &&\
