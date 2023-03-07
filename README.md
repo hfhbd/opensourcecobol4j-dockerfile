@@ -5,8 +5,8 @@
 
 ## Usage
 
-```
-docker run -v $(pwd):/output ghcr.io/hfhbd/cobol2java HELLO.cbl
+```sh
+docker run --platform linux/amd64 -v $(pwd):/output ghcr.io/hfhbd/cobol2java cobj HELLO.cbl
 ```
 
 This will create `Hello.java` and `Hello.class` in the current/mounted directory.
